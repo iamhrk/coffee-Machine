@@ -64,6 +64,7 @@ def check_resources(drink):
 
     if req_water <= curr_water and req_milk <= curr_milk and req_coffee <= curr_coffee:
         have_resource = True
+        print(f"It will cost you ${MENU[drink]['cost']}")
     else:
         have_resource = False
         if req_water > curr_water:
@@ -107,7 +108,7 @@ def check_money(cost, drink, water_amount, milk_amount, coffee_amount):
 
 # Input generation
 while True:
-    user_input = input("What would you like? (espresso/latte/cappuccino):")
+    user_input = input("What would you like? (espresso/latte/cappuccino):").lower()
     if user_input == "off":
         break
     elif user_input == "report":
